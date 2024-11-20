@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+    
+        <h1 id="output" style="color: white; font-size: 100px; text-align: center;margin-top: 500px;">H:S:M PM</h1>
+   
+    
+</body>
+<script>
+    const getTimeOut=()=>{
+        const localTime=new Date()
+        console.log(localTime);
+
+        let Hours=localTime.getHours()
+        let Minutes=localTime.getMinutes()
+        let Seconds=localTime.getSeconds()
+        let session='AM'
+
+            if(Hours>12){
+                Hours=Hours-12
+                session='PM'
+            }
+        output.innerHTML=`${Hours}:${Minutes}:${Seconds} ${session}`
+
+        setTimeout(() => {
+            getTimeOut()
+        }, 1000);
+        
+    }
+    getTimeOut()
+</script>
+</html>
